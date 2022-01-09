@@ -5,7 +5,7 @@ pipeline{
         stage ('Compile Stage') {
             steps {
                 withMaven(maven: 'maven_3_6_3'){
-                    batn 'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline{
         stage ('Testing Stage') {
             steps {
                 withMaven(maven: 'maven_3_6_3'){
-                    batn 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
@@ -22,10 +22,10 @@ pipeline{
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven: 'maven_3_6_3'){
-                    batn 'mvn tomcat7:undeploy'
+                    bat 'mvn tomcat7:undeploy'
                 }
                 withMaven(maven: 'maven_3_6_3'){
-                    batn 'mvn tomcat7:deploy'
+                    bat 'mvn tomcat7:deploy'
                 }
             }
         }
