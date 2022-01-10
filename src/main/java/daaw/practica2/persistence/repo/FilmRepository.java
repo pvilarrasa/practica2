@@ -12,5 +12,5 @@ public interface FilmRepository extends MongoRepository<Film, String>{
     Film findByTitle(String title);
     
     @Query("{actores:'?0'}")
-    List<Film> findByActor(String actor);
+    List<Film> findByActor(String actor); 
 }

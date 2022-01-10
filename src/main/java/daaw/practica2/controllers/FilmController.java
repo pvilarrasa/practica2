@@ -58,4 +58,9 @@ public class FilmController {
         filmRepository.deleteById(id);
     }
 
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
+
 }
