@@ -60,7 +60,7 @@ public class FilmController {
 
     @GetMapping("/test")
     public String test(){
-        return "test";
+        return "lorem ipsum";
     }
 
 }
